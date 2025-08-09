@@ -1,0 +1,180 @@
+<!--
+  Portfolio Website (index.html)
+  - Single-file responsive portfolio you can host on GitHub Pages.
+  - How to use:
+    1. Download this file and rename to index.html (keep as index.html).
+    2. Replace placeholder texts (YOUR NAME, bio, project entries, social links).
+    3. Add your images to an `assets/` folder and update the <img> src paths.
+    4. Create a new GitHub repository and push this file to the root of the main branch.
+       Example commands:
+         git init
+         git add index.html
+         git commit -m "Initial portfolio"
+         git branch -M main
+         git remote add origin https://github.com/YOURUSERNAME/YOURREPO.git
+         git push -u origin main
+    5. On GitHub: Settings → Pages → Source: Branch `main`, Folder `/ (root)` → Save.
+       Your site will be available at: https://YOURUSERNAME.github.io/YOURREPO/
+
+  Notes:
+  - This template uses plain HTML + CSS (no build tools). It's easy to edit.
+  - If you want a React or Tailwind version for more features, ask me and I'll create it.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SHIV KUMAR — Portfolio</title>
+  <meta name="description" content="Portfolio of YOUR NAME — projects, skills, contact." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+      --maxw:1100px; --radius:12px; --pad:22px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,#071022 0%, #071428 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw); margin:40px auto; padding:0 18px}
+
+    header{display:flex; gap:18px; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:14px; align-items:center}
+    .avatar{width:72px; height:72px; border-radius:14px; background:linear-gradient(135deg,var(--accent),#7c3aed); display:flex; align-items:center; justify-content:center; font-weight:700}
+    h1{margin:0; font-size:28px}
+    p.lead{margin:6px 0 0; color:var(--muted)}
+
+    .card{background:var(--card); border-radius:var(--radius); padding:var(--pad); box-shadow: 0 6px 20px rgba(2,6,23,0.6);}
+    .hero{display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:center; margin-top:22px}
+
+    .intro h2{margin:0 0 8px; font-size:22px}
+    .intro p{color:var(--muted); line-height:1.6}
+    .cta{margin-top:16px}
+    .btn{display:inline-block; padding:10px 14px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#7c3aed); color:#041028; font-weight:600; text-decoration:none}
+
+    .profile{display:flex; flex-direction:column; gap:12px}
+    .info{display:flex; gap:12px; align-items:center}
+    .stat{background:var(--glass); padding:10px; border-radius:10px; text-align:center}
+    .stat small{display:block; color:var(--muted)}
+    .projects{margin-top:20px; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px}
+    .project{padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    .project h3{margin:0 0 6px}
+    .project p{margin:0; color:var(--muted); font-size:14px}
+
+    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center}
+
+    .skills{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .skill{background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:8px; font-size:13px}
+
+    /* responsive */
+    @media(max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr}
+      .avatar{width:64px;height:64px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">YK</div>
+        <div>
+          <h1>SHIV KUMAR</h1>
+          <p class="lead">Computer Teacher • Aspiring Data Analyst • Content Creator</p>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#projects">My Work</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Hello — I'm <strong>SHIV KUMAR</strong></h2>
+        <p>I teach computers and create learning content for beginners. I build small projects in Excel, SQL, and Python and I share tutorials on YouTube. Replace this paragraph with your short bio: mention what you teach, your strengths, and what you're looking for (jobs, clients, collaborations).</p>
+        <div class="skills">
+          <div class="skill">Advance Excel</div>
+          <div class="skill">SQL</div>
+          <div class="skill">Python</div>
+          <div class="skill">Google sheets</div>
+          <div class="skill">MS Office</div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <div class="info">
+          <div style="flex:1">
+            <div class="stat">
+              <strong>4 yrs</strong>
+              <small>Teaching Experience</small>
+            </div>
+          </div>
+          <div style="flex:1">
+            <div class="stat">
+              <strong>100+</strong>
+              <small>Students Taught</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:12px; margin-top:8px">
+          <h3>Contact</h3>
+          <p style="margin:6px 0; color:var(--muted); font-size:14px">Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+          <p style="margin:6px 0; color:var(--muted); font-size:14px">YouTube: <a href="#">Learning Walk</a></p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" style="margin-top:20px">
+      <h2 style="margin-bottom:10px">Selected Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Interactive Excel Dashboard</h3>
+          <p>Create a live dashboard with charts, slicers, and Power Query to track sales or student progress.</p>
+          <p style="margin-top:8px"><small>Tools: Excel, Power Query, Charts</small></p>
+        </article>
+
+        <article class="project">
+          <h3>SQL Report Generator</h3>
+          <p>A set of SQL queries and views to prepare monthly reports for performance reviews.</p>
+          <p style="margin-top:8px"><small>Tools: PostgreSQL, SQL</small></p>
+        </article>
+
+        <article class="project">
+          <h3>Automation Scripts</h3>
+          <p>Python scripts that automate repetitive tasks like CSV processing and report creation.</p>
+          <p style="margin-top:8px"><small>Tools: Python, Pandas</small></p>
+        </article>
+
+        <article class="project">
+          <h3>Course Materials Pack</h3>
+          <p>Structured lesson plans, PPTs, and practice files for a basic computer course for beginners.</p>
+          <p style="margin-top:8px"><small>Tools: PowerPoint, Word, PDFs</small></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:20px">
+      <div class="card">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Want me to customize this page with your real projects, profile photo, or link it to your GitHub? Send me the details or ask me to set it up.</p>
+        <form onsubmit="window.location.href='mailto:your.email@example.com?subject=Website%20Contact&body=Hi%20YOUR%20NAME%2C%0A%0AI%20saw%20your%20portfolio.'; return false;">
+          <label style="display:block; margin-bottom:8px; color:var(--muted)">Message</label>
+          <textarea placeholder="Write a short message..." rows="4" style="width:100%; padding:10px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit"></textarea>
+          <div style="margin-top:10px">
+            <button class="btn" type="submit">Send Email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with ❤️ — Replace this footer with your social links: GitHub, LinkedIn, YouTube.</p>
+    </footer>
+  </div>
+</body>
+</html>
